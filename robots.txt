@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qin5tt.github.io/siteapp-aiyouxi-com-cn/sitemap.xml
