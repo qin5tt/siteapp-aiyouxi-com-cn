@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日常中的延伸 · 澳客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f3f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.7;
+            color: #2e3135;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper {
+            max-width: 880px;
+            width: 100%;
+        }
+
+        /* 开场短句 —— 柔韧呼吸感 */
+        .opening {
+            margin: 2.5rem 0 2rem 0;
+            padding: 0 0.5rem;
+        }
+
+        .opening p {
+            font-size: 1.5rem;
+            font-weight: 380;
+            letter-spacing: 0.02rem;
+            color: #3b4046;
+            line-height: 1.6;
+            border-left: 3px solid #b4bbc2;
+            padding-left: 1.4rem;
+        }
+
+        .opening .soft-accent {
+            color: #55626e;
+            font-weight: 420;
+        }
+
+        /* 卡片通用设计 — 浅灰背景、细边框、柔和阴影 */
+        .card {
+            background: #ffffff;
+            border: 1px solid #e3e6e9;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.2rem 2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .card-header {
+            font-size: 1.2rem;
+            font-weight: 460;
+            color: #3c434b;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-header span {
+            background: #eef0f2;
+            border-radius: 24px;
+            padding: 0.05rem 0.7rem;
+            font-size: 0.8rem;
+            color: #5f6975;
+        }
+
+        .card p, .card li {
+            color: #434a52;
+        }
+
+        /* 特点列表 — 温和分隔，不喧哗 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.6rem;
+            margin: 0.8rem 0 0.2rem 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            width: calc(50% - 1rem);
+            min-width: 180px;
+            font-size: 0.98rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px dashed #eaedf0;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            color: #8b96a2;
+            font-weight: 600;
+            margin-right: 0.2rem;
+        }
+
+        @media (max-width: 500px) {
+            .feature-list li {
+                width: 100%;
+            }
+        }
+
+        /* 场景网格 */
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1rem 0 0.2rem 0;
+        }
+
+        .scene-item {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 1.1rem 1.2rem;
+            border: 1px solid #e6e9ed;
+        }
+
+        .scene-item strong {
+            display: block;
+            font-weight: 510;
+            color: #2f363f;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .scene-item p {
+            margin: 0;
+            font-size: 0.93rem;
+            color: #535b64;
+        }
+
+        /* 提示 / 摘录 — 更柔和 */
+        .note-box {
+            background: #f7f8f9;
+            border-left: 4px solid #bfc6ce;
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 14px 14px 0;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .note-box p {
+            margin: 0.4rem 0;
+            font-size: 0.96rem;
+        }
+
+        .faq-mini {
+            margin-top: 0.8rem;
+            border-top: 1px solid #e6e9ed;
+            padding-top: 1rem;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-mini summary {
+            font-weight: 470;
+            color: #3b434c;
+            cursor: pointer;
+            padding: 0.2rem 0;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            color: #88939f;
+        }
+
+        .faq-mini details p {
+            margin: 0.3rem 0 0.2rem 1.2rem;
+            color: #505963;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            text-align: center;
+            padding: 1.2rem 0.5rem 2.5rem 0.5rem;
+            border-top: 1px solid #dfe3e7;
+            margin-top: 1.2rem;
+        }
+
+        .closing p {
+            font-size: 0.98rem;
+            color: #4f5863;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .closing a {
+            color: #4a5b6c;
+            text-decoration: none;
+            border-bottom: 1px solid #c0c9d2;
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .closing a:hover {
+            color: #1d2b38;
+            border-bottom-color: #5a6e80;
+        }
+
+        /* 其他链接 (句子内嵌) */
+        .inline-link {
+            color: #4a5b6c;
+            text-decoration: none;
+            border-bottom: 1px solid #d5dbdf;
+            transition: border-color 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #6f7e8b;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e0e4e8;
+            margin: 0.8rem 0 1.8rem 0;
+            opacity: 0.5;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 550px) {
+            .opening p {
+                font-size: 1.25rem;
+                padding-left: 1rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- 开场短句：日常的延伸 -->
+    <div class="opening">
+        <p>有时只是随手一查，<br class="break-mobile">却让对照与延伸自然发生。<span class="soft-accent">—— 一种温和的工具感。</span></p>
+    </div>
+
+    <!-- 承接段落：从查询到对照 -->
+    <div class="card">
+        <div class="card-header">📖 从一次查询开始 <span>延伸阅读</span></div>
+        <p>无论是想厘清一个概念，或是在几份资料间来回比对，我们常常需要一个安静、不催促的参考点。
+        不必是复杂的仪表盘，也无需夸张的跳转提醒；只要内容清晰，结构从容，就足以支撑起一次完整的对照。</p>
+        <p>在渐进的信息浏览中，<a href="https://site-web-aoke.com" class="inline-link">澳客</a> 的定位是帮助你在查找与整理之间找到节奏——
+        它更像一个可翻阅的桌面，而非单向的推送。</p>
+    </div>
+
+    <!-- 特点列表：温和但有层次 -->
+    <div class="card">
+        <div class="card-header">🧩 特点 · 对照中常见的使用倾向</div>
+        <ul class="feature-list">
+            <li>条目式预览，便于快速扫描</li>
+            <li>分类标签，降低反复翻找的成本</li>
+            <li>轻量对比，适合并排阅读的场景</li>
+            <li>无干扰排版，注意力留在内容本身</li>
+            <li>更新频率适中，信息沉淀而非轰炸</li>
+            <li>延伸链接自然分布，不打断思路</li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: #58616b;">当然，每个人使用习惯不尽相同，这些特点只是部分用户的常见感受。</p>
+    </div>
+
+    <!-- 场景：日常中的切面 -->
+    <div class="card">
+        <div class="card-header">☕ 场景 · 在哪些片刻会想到它</div>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <strong>午间翻阅</strong>
+                <p>快速扫读几段内容，不追求即时结论，只为保持信息触觉。</p>
+            </div>
+            <div class="scene-item">
+                <strong>资料对照</strong>
+                <p>打开两个窗口，一边是原文，一边是延伸笔记，逐条核实。</p>
+            </div>
+            <div class="scene-item">
+                <strong>间歇延伸</strong>
+                <p>阅读中遇到不熟悉的词，顺着一两个链接了解背景，不赶时间。</p>
+            </div>
+            <div class="scene-item">
+                <strong>整理回顾</strong>
+                <p>隔几天重新浏览之前看过的条目，发现上次忽略的细节。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.94rem; color: #58616b;">这些场景的共同点：不着急，不贪多，信息和人的节奏尽量贴合。</p>
+    </div>
+
+    <!-- 提示 + FAQ 摘要 (柔和) -->
+    <div class="card">
+        <div class="card-header">🔍 一点提示 & 常见想法</div>
+        <div class="note-box">
+            <p>📌 如果把 <a href="https://site-web-aoke.com" class="inline-link">澳客</a> 当作一个日常参考点，不妨试试：先明确自己想对照的核心问题，再浏览相关条目——效率往往更高，也不会被带偏。</p>
+        </div>
+        <div class="faq-mini">
+            <details>
+                <summary>适合用来做快速决策参考吗？</summary>
+                <p>它的定位更偏向信息整理与延伸阅读，如果是时间敏感的决策，建议结合其他实时渠道交叉确认。</p>
+            </details>
+            <details>
+                <summary>内容的筛选标准是什么？</summary>
+                <p>以清晰、可追溯为偏好，不追求流量或耸动，尽量避免碎片化拼接。</p>
+            </details>
+            <details>
+                <summary>需要注册或登录才能浏览吗？</summary>
+                <p>大部分内容可直接浏览，具体功能以实际页面为准，这里只描述通常的使用感受。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 温和结尾：保持开放 -->
+    <div class="closing">
+        <p>无论是例行翻阅，还是带着具体问题前来，<br>
+        信息的价值往往在安静对照中浮现。<br>
+        <a href="https://site-web-aoke.com">澳客</a> 只是其中一个可以停留的角落。</p>
+        <p style="margin-top: 1.2rem; font-size: 0.85rem; color: #737e89;">—— 日常查询 · 对照 · 延伸 ——</p>
+    </div>
+
+</div>
+</body>
+</html>
