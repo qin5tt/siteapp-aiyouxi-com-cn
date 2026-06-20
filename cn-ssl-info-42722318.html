@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 再次遇见，更加从容</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: #faf7f2;
+      color: #2e2b27;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fffcf8;
+      border-radius: 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+      padding: 2.8rem 2.2rem;
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 1.8rem 1.2rem; border-radius: 20px; }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      color: #1f1d1a;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #7a716a;
+      border-left: 3px solid #d6cdc2;
+      padding-left: 1.1rem;
+      margin-bottom: 2.4rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.2rem 0 1rem 0;
+      color: #3b3631;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .intro-card {
+      background: #f3eee7;
+      border-radius: 18px;
+      padding: 1.6rem 1.8rem;
+      margin: 1.8rem 0 2rem 0;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    @media (max-width: 500px) {
+      .highlight-grid { grid-template-columns: 1fr; }
+    }
+
+    .highlight-item {
+      background: #f9f5f0;
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+      border-left: 4px solid #cbb7a6;
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      color: #2f2a25;
+    }
+
+    .highlight-item span {
+      font-size: 0.95rem;
+      color: #5b524b;
+    }
+
+    .callout {
+      background: #ece6df;
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+      font-size: 0.95rem;
+      border: 1px solid #dbd3ca;
+    }
+
+    .callout p {
+      margin-bottom: 0.4rem;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-mini {
+      margin: 2.2rem 0 1.2rem 0;
+      border-top: 1px solid #e5ddd4;
+      padding-top: 1.8rem;
+    }
+
+    .faq-mini dt {
+      font-weight: 500;
+      margin-top: 1rem;
+      color: #3b3631;
+    }
+
+    .faq-mini dd {
+      margin-left: 0;
+      margin-bottom: 0.6rem;
+      color: #5b524b;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #8b6f59;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    a:hover {
+      color: #5d4a3b;
+      border-bottom-color: #b7a08b;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e5ddd4;
+      font-size: 0.9rem;
+      color: #8a8078;
+      text-align: left;
+    }
+
+    .footer-note a {
+      font-weight: 400;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      background: #2e2b27;
+      color: #faf7f2;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      z-index: 999;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+  <div class="page" role="main" id="main-content">
+    <h1>又见面了，MK体育</h1>
+    <div class="subhead">持续关注的节奏，不必每次都从头开始</div>
+
+    <p>有时候你会收藏一个地方，未必需要每天打开，但心里知道它在那里。隔一段时间回来，界面还是熟习的，内容已经有了新的厚度——这样的体验，就是 <a href="https://cn-ssl-mk.com">MK体育</a> 给人的感觉。没有刻意的喧哗，也没有复杂的门槛，一切都为了让再次到访的人感到舒服。</p>
+
+    <div class="intro-card">
+      <p><strong>MK体育</strong> 是一处关于运动资讯、赛事观察与日常锻炼灵感的站点。它不追求资讯轰炸，而是用相对克制的节奏，持续更新那些真正值得留意的内容。从赛季前瞻到训练技巧，从装备选择到运动恢复，覆盖的面够广，但每篇都保持自己的风格。</p>
+      <p>如果你习惯把好用的页面加入书签，那么 <a href="https://cn-ssl-mk.com">MK体育</a> 值得占一个位置。不是因为有什么独家内幕，而是因为它总能提供一些让人想说“哦，原来还可以这样”的角度。</p>
+    </div>
+
+    <h2>几个让人愿意回来的理由</h2>
+    <div class="highlight-grid">
+      <div class="highlight-item">
+        <strong>内容不赶时间</strong>
+        <span>不追逐每一秒的热点，而是等事件沉淀之后给出更清晰的回顾。读起来像朋友在分享，不是新闻简报。</span>
+      </div>
+      <div class="highlight-item">
+        <strong>切入点生活化</strong>
+        <span>哪怕是专业赛事分析，也会顺手带上一段“这个动作平时打球也能用”。把运动拉回日常，而不是停在电视里。</span>
+      </div>
+      <div class="highlight-item">
+        <strong>视觉干净，阅读友好</strong>
+        <span>米白底色、适中字号、不刺眼的配色。没有满屏弹窗，也没有自动播放的视频，信息本身是主角。</span>
+      </div>
+      <div class="highlight-item">
+        <strong>持续更新，但不过度</strong>
+        <span>每两三天一篇的速度，不制造信息焦虑。隔一周回来，总能发现一两篇有意思的新内容，刚刚好。</span>
+      </div>
+    </div>
+
+    <h2>什么场景适合打开它？</h2>
+    <p>工作日午休，想看点跟工作无关但又不纯粹消磨时间的东西；周末早上，泡杯茶，翻翻最近的赛况总结或训练建议；又或者你刚结束一场球赛，想搜一下某个动作的分解解读——<a href="https://cn-ssl-mk.com">MK体育</a> 在这些时候都挺合适。它不是非用不可的工具，更像是一本可以随时翻到特定章节的手册。</p>
+
+    <div class="callout">
+      <p>📌 一些值得知道的事</p>
+      <p>站点使用标准 HTTPS 连接，数据传输经过加密。没有隐藏的广告弹窗，也没有自动订阅的邮件列表。你可以安心地浏览，不必担心隐私被过度收集。页面加载速度中规中矩，图片经过压缩，流量消耗控制在合理范围之内。</p>
+      <p>如果偶尔遇到加载稍慢，多半是因为缓存刷新或网络波动，刷新一下通常就能恢复。目前网站没有设置会员体系，所有内容对访客一视同仁。</p>
+    </div>
+
+    <dl class="faq-mini">
+      <dt>需要注册或登录才能看吗？</dt>
+      <dd>不需要。MK体育 目前所有文章和页面都公开可读，没有注册门槛。</dd>
+      <dt>会推送通知或者邮件吗？</dt>
+      <dd>没有自动推送。如果你希望收到更新，可以手动关注网站的更新频率，或者偶尔回来看一眼。</dd>
+      <dt>内容会删除或归档吗？</dt>
+      <dd>大部分内容会保留，少数时效性强的页面会在赛季结束后归档，并存放在单独的分类里，依然可以查阅。</dd>
+      <dt>移动端体验怎么样？</dt>
+      <dd>页面适配了手机和平板，文字会自动调整行距和大小，导航同样简洁，可以像在电脑上一样顺畅阅读。</dd>
+    </dl>
+
+    <p style="margin-top: 2rem;">总的来说，<a href="https://cn-ssl-mk.com">MK体育</a> 适合那些对运动持有持续兴趣、但不想被信息裹挟的人。你可以把它看作一个常去的小站，不需要每次都带着目的，偶尔路过也会有收获。收藏它，然后在下一次想看点什么的时候，自然地点开，这就够了。</p>
+
+    <div class="footer-note">
+      <p>页面内容仅供了解与参考。所有信息以 <a href="https://cn-ssl-mk.com">MK体育</a> 网站实际展示为准。如果你觉得有帮助，不妨把它保留在书签栏里。</p>
+    </div>
+  </div>
+</body>
+</html>
